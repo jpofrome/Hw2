@@ -6,7 +6,7 @@ import org.junit.Assert;
 public class InventoryTest {
 
     @Test
-    public void testFindCheapestVehicleNormal(){
+    public void testCheapestVehicleNormal(){
         //given
         Vehicle norm1 = new Vehicle("Ran Model", 2012, false, 12000, 26);
         Vehicle norm2 = new Vehicle("Ran Model", 2012, false, 11000, 26);
@@ -22,11 +22,11 @@ public class InventoryTest {
         vehicleTest.findCheapestVehicle();
 
         //then
-        Assert.assertEquals("Not cheapest car", 200, vehicleTest.findCheapestVehicle());
+        Assert.assertEquals("Not cheapest car", norm4, vehicleTest.findCheapestVehicle());
     }
 
     @Test
-    public void testFindCheapestVehicleZero(){
+    public void testCheapestVehicleZero(){
         //given
         Vehicle norm1 = new Vehicle("Ran Model", 2012, false, 12000, 26);
         Vehicle norm2 = new Vehicle("Ran Model", 2012, false, 11000, 26);
@@ -42,11 +42,11 @@ public class InventoryTest {
         vehicleTest.findCheapestVehicle();
 
         //then
-        Assert.assertEquals("Not cheapest car", 0, vehicleTest.findCheapestVehicle());
+        Assert.assertEquals("Not cheapest car", norm4, vehicleTest.findCheapestVehicle());
     }
 
     @Test
-    public void testFindCheapestVehicleNegative(){
+    public void testCheapestVehicleNegative(){
         //given
         Vehicle norm1 = new Vehicle("Ran Model", 2012, false, 12000, 26);
         Vehicle norm2 = new Vehicle("Ran Model", 2012, false, 11000, 26);
@@ -62,11 +62,11 @@ public class InventoryTest {
         vehicleTest.findCheapestVehicle();
 
         //then
-        Assert.assertEquals("Not cheapest car", -1, vehicleTest.findCheapestVehicle());
+        Assert.assertEquals("Not cheapest car", norm4, vehicleTest.findCheapestVehicle());
     }
 
     @Test
-    public void testFindCheapestVehicleHigh(){
+    public void testCheapestVehicleHigh(){
         //given
         Vehicle norm1 = new Vehicle("Ran Model", 2012, false, 12000, 26);
         Vehicle norm2 = new Vehicle("Ran Model", 2012, false, 11000, 26);
@@ -82,11 +82,11 @@ public class InventoryTest {
         vehicleTest.findCheapestVehicle();
 
         //then
-        Assert.assertEquals("Not cheapest car", 10000, vehicleTest.findCheapestVehicle());
+        Assert.assertEquals("Not cheapest car", norm3, vehicleTest.findCheapestVehicle());
     }
 
     @Test
-    public void testFindMostExpensiveVehicleNormal(){
+    public void testExpensiveVehicleNormal(){
         //given
         Vehicle norm1 = new Vehicle("Ran Model", 2012, false, 12000, 26);
         Vehicle norm2 = new Vehicle("Ran Model", 2012, false, 11000, 26);
@@ -102,11 +102,11 @@ public class InventoryTest {
         vehicleTest.findMostExpensiveVehicle();
 
         //then
-        Assert.assertEquals("Not cheapest car", 13000, vehicleTest.findMostExpensiveVehicle());
+        Assert.assertEquals("Not cheapest car", norm4, vehicleTest.findMostExpensiveVehicle());
     }
 
     @Test
-    public void testFindMostExpensiveVehicleLarge(){
+    public void testExpensiveVehicleLarge(){
         //given
         Vehicle norm1 = new Vehicle("Ran Model", 2012, false, 12000, 26);
         Vehicle norm2 = new Vehicle("Ran Model", 2012, false, 11000, 26);
@@ -122,12 +122,12 @@ public class InventoryTest {
         vehicleTest.findMostExpensiveVehicle();
 
         //then
-        Assert.assertEquals("Not cheapest car", 1000000000, vehicleTest.findMostExpensiveVehicle());
+        Assert.assertEquals("Not cheapest car", norm4, vehicleTest.findMostExpensiveVehicle());
     }
 
 
     @Test
-    public void testFindMostExpensiveVehicleDecimalNegativeZero(){
+    public void testExpensiveVehicleDecimalNegativeZero(){
         //given
         Vehicle norm1 = new Vehicle("Ran Model", 2012, false, 0, 26);
         Vehicle norm2 = new Vehicle("Ran Model", 2012, false, 11000.98, 26);
@@ -143,7 +143,7 @@ public class InventoryTest {
         vehicleTest.findMostExpensiveVehicle();
 
         //then
-        Assert.assertEquals("Not cheapest car", 11000.98, vehicleTest.findMostExpensiveVehicle());
+        Assert.assertEquals("Not cheapest car", norm2, vehicleTest.findMostExpensiveVehicle());
     }
 
 }
