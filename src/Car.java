@@ -41,3 +41,7 @@ public class Car extends Vehicle {
                 System.out.println("Not a convertible");        }
     }
 }
+
+//for print vehicle function:
+// can put-  super.printVehicle();
+// then just do the convertible part, also applies for truck
