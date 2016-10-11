@@ -146,4 +146,18 @@ public class InventoryTest {
         Assert.assertEquals("Not cheapest car", norm2, vehicleTest.findMostExpensiveVehicle());
     }
 
+    @Test
+    public void testExpensiveVehicleNoData(){
+        //given
+        Vehicle norm1 = new Vehicle("", 0, false, 0, 0);
+        Inventory vehicleTest = new Inventory();
+        vehicleTest.addVehicle(norm1);
+
+        //when
+        vehicleTest.findMostExpensiveVehicle();
+
+        //then
+        Assert.assertEquals("Not cheapest car", "No vehicle", vehicleTest.findMostExpensiveVehicle());
+    }
+
 }
